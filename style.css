@@ -1,0 +1,246 @@
+/* Общие стили */
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+.header {
+    font-size: 36px;
+    line-height: 29px;
+}
+
+.header-container {
+    background-image: url('full_logo.png');
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(77, 77, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-nav {
+    width: 100%;
+    max-width: 1500px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.header-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.header-menu-item {
+    color: black;
+    background: linear-gradient(currentColor 0 0) bottom / var(--d, 0) 3px no-repeat;
+    transition: 0.5s;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.header-menu-item:hover {
+    --d: 100%;
+}
+
+/* Body */
+.body-container {
+    background-color: rgb(255, 255, 255);
+    height: 830px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-content {
+    background-color: rgba(255, 255, 255, 0.75);
+    height: 400px;
+    width: 750px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 26px;
+    line-height: 29px;
+    border-radius: 10px;
+}
+
+.body-text {
+    padding: 20px;
+    width: 300px;
+}
+
+.body-img {
+    padding: 20px;
+}
+
+.zoom-img {
+    width: 440px;
+    height: 235px;
+    transition: transform 0.3s ease;
+}
+
+.zoom-img:hover {
+    transform: scale(1.25);
+}
+
+.slider-container {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+}
+
+.slider-text {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.slider-text.active {
+    opacity: 1;
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+.floating-delayed1 {
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 0.1s;
+}
+
+.floating-delayed2 {
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 0.15s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.footer{
+    background-color: rgb(77, 77, 255);
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-link a {
+    color: white;
+    font-size: 24px;
+    line-height: 29px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link a:hover {
+    color: #000000;
+}
+
+
+#scrollToTopBtn {
+    display: none; /* Скрываем кнопку по умолчанию */
+    position: fixed; /* Фиксируем кнопку на экране */
+    bottom: 20px; /* Расстояние от нижнего края */
+    right: 30px; /* Расстояние от правого края */
+    z-index: 99; /* Устанавливаем высокий z-index, чтобы кнопка была поверх других элементов */
+    border: none;
+    outline: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%; /* Делаем кнопку круглой */
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #333; /* Изменяем цвет при наведении */
+}
+
+
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 1200px) {
+    .header-nav {
+        width: 90%;
+    }
+
+    .body-content {
+        width: 90%;
+    }
+}
+
+@media (max-width: 760px) {
+
+
+    .header-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-menu-item {
+        margin: 10px 0;
+    }
+
+    .body-content {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .body-img {
+        order: -1;
+    }
+
+    .zoom-img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: 20px 0;
+    }
+
+    .header-menu-item {
+        font-size: 18px;
+    }
+
+    .body-text {
+        font-size: 20px;
+    }
+
+    .slider-container {
+        font-size: 20px;
+    }
+}
